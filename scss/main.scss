@@ -1,0 +1,138 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$font: "Kumbh Sans", sans-serif;
+
+// font-size
+$font-size-name-stats: 18px;
+
+// Colors
+// primary
+$clr-dark-cyan: hsl(185, 75%, 39%);
+$clr-blue: hsl(229, 23%, 23%);
+$clr-gray-blue: hsl(227, 10%, 46%);
+
+// Neutral
+$clr-dark-gray: hsl(0, 0%, 59%);
+
+// Base
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  height: 100vh;
+  background: #19a1ae;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+// Card
+
+.card {
+  width: 90vw;
+  max-width: 350px;
+  height: 375px;
+  border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
+
+  .header {
+    height: 140px;
+    position: relative;
+    background: url("../images/bg-pattern-card.svg") no-repeat center
+      center/cover;
+
+    img {
+      display: block;
+      border-radius: 50%;
+      margin: auto;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: white solid 5px;
+    }
+  }
+
+  .body {
+    height: 145px;
+    display: grid;
+    place-items: center; //tijdelijk
+    position: relative;
+    border-bottom: 1px solid #e8e9ec;
+
+    .body-content {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h2 {
+        font-size: $font-size-name-stats;
+        margin-bottom: 8px;
+
+        span {
+          font-size: $font-size-name-stats;
+          line-height: 18px;
+          font-weight: 400;
+          color: clr-gray-blue;
+        }
+      }
+
+      p.loction {
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+  }
+
+  .footer {
+    padding: 25px 50px;
+    height: 90px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 9px;
+
+    h2 {
+      font-size: $font-size-name-stats;
+      line-height: 18px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.body-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../images/bg-pattern-top.svg") no-repeat center center/cover;
+  z-index: -1;
+}
+.body-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../images/bg-pattern-bottom.svg") no-repeat center
+    center/cover;
+  z-index: -1;
+}
